@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      * URL for jobs data.
      */
     private static final String JOBS_REQUEST_URL =
-            "JSOB URL";
+            "URL";
 
     /**
      * Constant value for the jobs loader ID.
@@ -159,8 +159,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //String orderByValue = sharedPreferences.getString(
         //        getString(R.string.settings_order_by_key),
         //        getString(R.string.settings_order_by_default));
-
-
 
 
         Uri baseUri = Uri.parse(JOBS_REQUEST_URL);
