@@ -17,9 +17,6 @@ import java.util.List;
 
 public class JobsAdapter extends ArrayAdapter<Jobs> {
 
-    private static final String DATE_SEPARATOR = "T";
-    private static final String TIME_SEPARATOR = "Z";
-
     /**
      * Constructs a new {@link JobsAdapter}.
      *
@@ -33,9 +30,10 @@ public class JobsAdapter extends ArrayAdapter<Jobs> {
     // Initialize ViewHolder as a cache mechanism
     // for storing Views
     public static class ViewHolder {
-        //TODO initialize views
-        // TextView titleView;
-
+        TextView titleView;
+        TextView companyView;
+        TextView jobTypeView;
+        TextView experienceView;
     }
 
     /**
@@ -58,38 +56,23 @@ public class JobsAdapter extends ArrayAdapter<Jobs> {
         ViewHolder holder = new ViewHolder();
 
         if (currentJobs != null) {
-            //TODO Holder views
+
             // Display the title of the job in that TextView
-            //holder.titleView = listItemView.findViewById(R.id.jobs_title);
-            //holder.titleView.setText(currentJobs.getJobsTitle());
+            holder.titleView = listItemView.findViewById(R.id.title);
+            holder.titleView.setText(currentJobs.getTitle());
 
+            // Display the title of the job in that TextView
+            holder.companyView = listItemView.findViewById(R.id.company);
+            holder.companyView.setText(currentJobs.getCompany());
 
+            // Display the title of the job in that TextView
+            holder.jobTypeView = listItemView.findViewById(R.id.jobType);
+            holder.jobTypeView.setText(currentJobs.getJobType());
 
-            // Variables for the Date field transformation.
-            String originalDate = currentJobs.getJobsDate();
-            String dateOffset = "";
-            String dateLeftover;
-            String timeOffset = "";
+            // Display the title of the job in that TextView
+            holder.experienceView = listItemView.findViewById(R.id.experience);
+            holder.experienceView.setText(currentJobs.getExperience());
 
-            if (originalDate.contains(DATE_SEPARATOR)) {
-                // Split the string into different parts (as an array of Strings)
-                // based on the "T" text. We expect an array of 2 Strings, where
-                // the first String will be "date" and the second String will be "time".
-                String[] date = originalDate.split(DATE_SEPARATOR);
-                dateOffset = date[0];
-                dateLeftover = date[1];
-
-                // Do the same with "leftover" of date, which contains time and separator "Z"
-                String[] time = dateLeftover.split(TIME_SEPARATOR);
-                timeOffset = time[0];
-            }
-
-            // Find the TextView with view ID location
-            holder.dateView = listItemView.findViewById(R.id.jobs_date);
-
-            // Display the date and time and "," between them
-            String dateTimeWithSeparator = dateOffset + getContext().getString(R.string.date_time_separator) + timeOffset;
-            holder.dateView.setText(dateTimeWithSeparator);
         }
         return listItemView;
     }

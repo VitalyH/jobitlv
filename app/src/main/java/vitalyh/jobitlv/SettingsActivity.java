@@ -22,11 +22,11 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            //TODO XML file with settings
-            addPreferencesFromResource(R.xml.settings_main);
+            //Path to XML file with settings
+            //addPreferencesFromResource(R.xml.settings_main);
 
             // Show settings values
-            //TODO values, example:
+            // example:
             // Preference orderBy = findPreference(getString(R.string.settings));
             //bindPreferenceSummaryToValue(orderBy);
         }

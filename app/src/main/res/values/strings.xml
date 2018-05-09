@@ -1,5 +1,13 @@
 <resources>
+    <!-- App Name -->
     <string name="app_name">Job(IT).lv</string>
+
+    <!-- Settings -->
     <string name="settings">Settings</string>
+
+    <!-- Errors -->
+    <string name="no_internet_connection">No internet connection.</string>
+    <string name="no_jobs">No jobs found :(. Refresh the list or come back later!</string>
+    <string name="no_browser">No internet browser found! Get Google Chrome from the Play Store!</string>
 
 </resources>

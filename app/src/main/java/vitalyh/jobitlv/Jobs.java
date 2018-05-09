@@ -6,11 +6,24 @@ package vitalyh.jobitlv;
 public class Jobs {
 
     /**
+     * Job title
+     */
+    private final String mTitle;
+
+    /**
      * Name of the company
      */
     private final String mCompany;
 
-    //TODO more variables
+    /**
+     * Type of the job
+     */
+    private final String mJobType;
+
+    /**
+     * Experience of the candidate
+     */
+    private final String mExperience;
 
     /**
      * Website URL of the job offering
@@ -20,15 +33,25 @@ public class Jobs {
     /**
      * Constructs a new {@link Jobs} object.
      *
+     * @param title is the job' title
      * @param company is the name of the company
-        //TODO more params
+     * @param jobType is the type of the job
+     * @param experience is the expected experience
      * @param url     is the website URL to the job offering
      */
-    public Jobs(String company, .... url) {
-        //TODO finish the constructor
+    public Jobs(String title, String company, String jobType, String experience, String url) {
+        mTitle = title;
         mCompany = company;
-
+        mJobType = jobType;
+        mExperience = experience;
         mUrl = url;
+    }
+
+    /**
+     * Returns the name of the company.
+     */
+    public String getTitle() {
+        return mTitle;
     }
 
     /**
@@ -38,7 +61,19 @@ public class Jobs {
         return mCompany;
     }
 
-    //TODO more getSomething
+    /**
+     * Returns the name of the company.
+     */
+    public String getJobType() {
+        return mJobType;
+    }
+
+    /**
+     * Returns the name of the company.
+     */
+    public String getExperience() {
+        return mExperience;
+    }
 
     /**
      * Returns the URL of the job offering
