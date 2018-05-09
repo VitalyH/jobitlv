@@ -17,6 +17,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+<<<<<<< HEAD
     <style name="CustomStyleWithCommonProperties">
         <item name="android:textSize">@dimen/small_text_size</item>
         <item name="android:paddingStart">@dimen/small_padding</item>
@@ -49,4 +50,16 @@
         <item name="android:layout_marginEnd">@dimen/fab_margin</item>
     </style>
 
+||||||| merged common ancestors
+=======
+    <style name="FloatingActionButtonStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_marginBottom">@dimen/fab_margin</item>
+        <item name="android:layout_marginEnd">@dimen/fab_margin</item>
+    </style>
+
+>>>>>>> f7798f484d05f7e77c417a9669fe2b21755ecc9a
 </resources>
