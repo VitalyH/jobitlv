@@ -1,0 +1,26 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/settings">
+
+    <ListPreference
+        android:defaultValue="All"
+        android:entries="@array/settings_company_labels"
+        android:entryValues="@array/settings_company_values"
+        android:key="companyKey"
+        android:title="@string/settings_company_label" />
+
+    <ListPreference
+        android:defaultValue="Any"
+        android:entries="@array/settings_seniority_labels"
+        android:entryValues="@array/settings_seniority_values"
+        android:key="seniorityKey"
+        android:title="@string/settings_seniority_label" />
+
+    <ListPreference
+        android:defaultValue="Any"
+        android:entries="@array/settings_job_type_labels"
+        android:entryValues="@array/settings_job_type_values"
+        android:key="jobTypeKey"
+        android:title="@string/settings_job_type_label" />
+
+</PreferenceScreen>

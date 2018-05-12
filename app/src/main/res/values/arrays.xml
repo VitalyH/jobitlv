@@ -1,0 +1,57 @@
+<resources>
+    <string-array name="settings_company_labels">
+        <item>All</item>
+        <item>4finance</item>
+        <item>Accenture</item>
+        <item>AppXite</item>
+        <item>Evolution Gaming</item>
+        <item>FDC AS</item>
+        <item>Infogram</item>
+        <item>Scandinavian World SIA</item>
+        <item>Scandiweb </item>
+        <item>Swedbank</item>
+        <item>Tele2</item>
+        <item>ATieto</item>
+    </string-array>
+
+    <string-array name="settings_company_values">
+        <item>All</item>
+        <item>4finance</item>
+        <item>Accenture</item>
+        <item>AppXite</item>
+        <item>Evolution Gaming</item>
+        <item>FDC AS</item>
+        <item>Infogram</item>
+        <item>Scandinavian World SIA</item>
+        <item>Scandiweb </item>
+        <item>Swedbank</item>
+        <item>Tele2</item>
+        <item>ATieto</item>
+    </string-array>
+
+    <string-array name="settings_seniority_labels">
+        <item>Any</item>
+        <item>Entry level</item>
+        <item>Mid-Senior level</item>
+        <item>Not Applicable</item>
+    </string-array>
+
+    <string-array name="settings_seniority_values">
+        <item>Any</item>
+        <item>Entry level</item>
+        <item>Mid-Senior level</item>
+        <item>Not Applicable</item>
+    </string-array>
+
+    <string-array name="settings_job_type_labels">
+        <item>Any</item>
+        <item>Full-time</item>
+        <item>Part-time</item>
+    </string-array>
+
+    <string-array name="settings_job_type_values">
+        <item>Any</item>
+        <item>Full-time</item>
+        <item>Part-time</item>
+    </string-array>
+</resources>

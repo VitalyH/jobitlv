@@ -4,14 +4,12 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     /**
      * URL for jobs data.
      */
-    private static final String JOBS_REQUEST_URL =
-            "URL";
+    public static final String JOBS_REQUEST_URL =
+            "https://gist.githubusercontent.com/VitalyH/ea384fc194bb8918fa70cbdf00ce08e6/raw/json.txt";
 
     /**
      * Constant value for the jobs loader ID.
@@ -47,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      * TextView that is displayed when the list is empty
      */
     private TextView mEmptyStateTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,24 +148,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<Jobs>> onCreateLoader(int i, Bundle bundle) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-
-        // getString retrieves a String value from the preferences
-        // The second parameter is the default value
-        //TODO implement settings like this
-
-        // This one for order of displaying Jobs
-        //String orderByValue = sharedPreferences.getString(
-        //        getString(R.string.settings_order_by_key),
-        //        getString(R.string.settings_order_by_default));
-
 
         Uri baseUri = Uri.parse(JOBS_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
-        // Additional query parameters.
-        // Allow users to customize them via Settings
-        // Liek this
-        //uriBuilder.appendQueryParameter(API_KEY, API_KEY_VALUE);
+        // Let it be like this for possible JSON improvements in the future
 
         return new JobsLoader(this, uriBuilder.toString());
     }

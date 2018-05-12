@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +24,16 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             //Path to XML file with settings
-            //addPreferencesFromResource(R.xml.settings_main);
+            addPreferencesFromResource(R.xml.settings_main);
 
             // Show settings values
-            // example:
-            // Preference orderBy = findPreference(getString(R.string.settings));
-            //bindPreferenceSummaryToValue(orderBy);
+            Preference company = findPreference(getString(R.string.settings_company_key));
+            bindPreferenceSummaryToValue(company);
+            Preference seniority = findPreference(getString(R.string.settings_seniority_key));
+            bindPreferenceSummaryToValue(seniority);
+            Preference jobType = findPreference(getString(R.string.settings_job_type_key));
+            bindPreferenceSummaryToValue(jobType);
+
         }
 
         @Override

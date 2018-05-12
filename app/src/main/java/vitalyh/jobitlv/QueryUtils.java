@@ -1,5 +1,7 @@
 package vitalyh.jobitlv;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import org.json.JSONArray;
@@ -27,10 +29,10 @@ public final class QueryUtils {
     private static final String LOG_TAG = QueryUtils.class.getSimpleName();
 
     /**
-     *  Key values for JSON request
+     * Key values for JSON request
      */
     private static final String RESPONSE = "response";
-    private static final String RESULTS= "results";
+    private static final String RESULTS = "results";
 
     /**
      * Create a private constructor - class where we can hold static variables and methods.
@@ -133,6 +135,7 @@ public final class QueryUtils {
         return output.toString();
     }
 
+
     /**
      * Return a list of {@link Jobs} objects that has been built up from
      * parsing the given JSON response.
@@ -143,8 +146,29 @@ public final class QueryUtils {
             return null;
         }
 
+        // Retrieve preferences from sharedPreferences
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.context());
+
+        // getString retrieves a String value from the preferences
+        // The second parameter is the default value
+        // This one for company
+        String companySettings = sharedPreferences.getString(
+                App.context().getResources().getString(R.string.settings_company_key),
+                App.context().getResources().getString(R.string.settings_company_default_key));
+
+        // This one for experience
+        String senioritySettings = sharedPreferences.getString(
+                App.context().getResources().getString(R.string.settings_seniority_key),
+                App.context().getResources().getString(R.string.settings_seniority_default_key));
+
+        // This one for job types
+        String jobTypeSettings = sharedPreferences.getString(
+                App.context().getResources().getString(R.string.settings_job_type_key),
+                App.context().getResources().getString(R.string.settings_job_type_default_key));
+
         // Create an empty ArrayList that we can start adding jobs to
         List<Jobs> jobsList = new ArrayList<>();
+
 
         // Try to parse the JSON response string. If there's a problem, a JSONException
         // exception object will be thrown.
@@ -164,17 +188,25 @@ public final class QueryUtils {
                 JSONObject currentJobs = jobsArray.getJSONObject(i);
 
                 // Extract the company name
+                String title = currentJobs.getString("title");
                 String company = currentJobs.getString("company");
+                String jobType = currentJobs.getString("jobType");
+                String seniority = currentJobs.getString("seniority");
+                String url = currentJobs.getString("url");
 
-                //TODO more extractions
+                // Log.v("VALUE", companySettings);
+                // Apply settings values
+                // Create object only with values from JSON which matches user's settings
+                if (company.equals(companySettings) || companySettings.equals("All")) {
+                    if (seniority.equals(senioritySettings) || senioritySettings.equals("Any")) {
+                        if (jobType.equals(jobTypeSettings) || jobTypeSettings.equals("Any")){
 
+                        // Create a new Jobs object.
+                    Jobs jobs = new Jobs(title, company, jobType, seniority, url);
 
-                // Create a new Jobs object.
-                //TODO more fields
-                Jobs jobs = new Jobs(company, ...);
-
-                // Add the new Jobs object to the list of jobs.
-                jobsList.add(jobs);
+                    // Add the new Jobs object to the list of jobs.
+                    jobsList.add(jobs);
+                }}}
             }
 
         } catch (JSONException e) {

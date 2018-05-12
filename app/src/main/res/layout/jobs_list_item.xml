@@ -2,9 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/list_item_text_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    android:layout_height="wrap_content">
 
     <!-- Company name, top left corner -->
     <TextView
@@ -12,15 +10,6 @@
         style="@style/JobsListTopViews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <!-- Type, top right corner  -->
-    <TextView
-        android:id="@+id/jobType"
-        style="@style/JobsListTopViews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true" />
 
     <!-- Jobs title, in the middle -->
     <TextView
@@ -30,13 +19,41 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/company" />
 
-    <!-- Experience-->
+    <!-- Seniority label, bottom -->
     <TextView
-        android:id="@+id/experience"
-        style="@style/Experience"
+        android:id="@+id/seniority_label"
+        style="@style/Labels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
-         />
+        android:text="@string/list_view_seniority_label" />
+
+    <!-- Seniority, bottom -->
+    <TextView
+        android:id="@+id/seniority"
+        style="@style/SeniorityAndType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toEndOf="@+id/seniority_label" />
+
+    <!-- Job label, bottom  -->
+    <TextView
+        android:id="@+id/job_type_label"
+        style="@style/Labels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toEndOf="@+id/seniority"
+        android:text="@string/list_view_job_type_label" />
+
+    <!-- Job type, bottom  -->
+    <TextView
+        android:id="@+id/job_type"
+        style="@style/SeniorityAndType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toEndOf="@+id/job_type_label" />
 
 </RelativeLayout>

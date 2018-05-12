@@ -27,13 +27,12 @@ public class JobsAdapter extends ArrayAdapter<Jobs> {
         super(context, 0, jobs);
     }
 
-    // Initialize ViewHolder as a cache mechanism
-    // for storing Views
+    // Initialize ViewHolder as a cache mechanism for storing Views
     public static class ViewHolder {
         TextView titleView;
         TextView companyView;
         TextView jobTypeView;
-        TextView experienceView;
+        TextView seniorityView;
     }
 
     /**
@@ -66,12 +65,12 @@ public class JobsAdapter extends ArrayAdapter<Jobs> {
             holder.companyView.setText(currentJobs.getCompany());
 
             // Display the title of the job in that TextView
-            holder.jobTypeView = listItemView.findViewById(R.id.jobType);
+            holder.jobTypeView = listItemView.findViewById(R.id.job_type);
             holder.jobTypeView.setText(currentJobs.getJobType());
 
             // Display the title of the job in that TextView
-            holder.experienceView = listItemView.findViewById(R.id.experience);
-            holder.experienceView.setText(currentJobs.getExperience());
+            holder.seniorityView = listItemView.findViewById(R.id.seniority);
+            holder.seniorityView.setText(currentJobs.getSeniority());
 
         }
         return listItemView;

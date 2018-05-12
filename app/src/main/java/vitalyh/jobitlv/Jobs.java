@@ -21,9 +21,9 @@ public class Jobs {
     private final String mJobType;
 
     /**
-     * Experience of the candidate
+     * Seniority level of the candidate
      */
-    private final String mExperience;
+    private final String mSeniority;
 
     /**
      * Website URL of the job offering
@@ -36,19 +36,19 @@ public class Jobs {
      * @param title is the job' title
      * @param company is the name of the company
      * @param jobType is the type of the job
-     * @param experience is the expected experience
+     * @param seniority is the seniority level of the candidat
      * @param url     is the website URL to the job offering
      */
-    public Jobs(String title, String company, String jobType, String experience, String url) {
+    public Jobs(String title, String company, String jobType, String seniority, String url) {
         mTitle = title;
         mCompany = company;
         mJobType = jobType;
-        mExperience = experience;
+        mSeniority = seniority;
         mUrl = url;
     }
 
     /**
-     * Returns the name of the company.
+     * Returns the title of the job
      */
     public String getTitle() {
         return mTitle;
@@ -62,17 +62,17 @@ public class Jobs {
     }
 
     /**
-     * Returns the name of the company.
+     * Returns the type of the job
      */
     public String getJobType() {
         return mJobType;
     }
 
     /**
-     * Returns the name of the company.
+     * Returns the seniority level
      */
-    public String getExperience() {
-        return mExperience;
+    public String getSeniority() {
+        return mSeniority;
     }
 
     /**
